@@ -46,5 +46,17 @@ public class L1S2 : MonoBehaviour
          * If you change the right number, it will be much easier to get all the coins.
         */
 
+
+        /*
+         * Another extra challenge!
+         * 
+         * The following code makes something special in the sky. What is it?
+        */
+
+        for (int i = 0; i < 4; i++)
+            for (int j = 0; j < 4; j++)
+                for (int k = 0; k < 4; k++)
+                    LessonTools.MakeCube(i, j + 20, k,cubeSize);
+
     }
 }
