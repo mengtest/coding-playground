@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class Lesson1 : MonoBehaviour
+public class L1S1 : MonoBehaviour
 {
 
     void Start()
@@ -9,21 +9,21 @@ public class Lesson1 : MonoBehaviour
         //When you see two slashes at the start of the line like this: "//" it means the computer will ignore this line.
         //Lines starting with two slashes are called comments.
 
-        float size = 0.8f;
+        float cubeSize = 0.8f;
 
         //Question: here are three "for loops". Match up each for loop with its sign in the 3D world: A, B, or C.
 
         //for loop #1
         for (int i = 0; i < 3; i++)
-            LessonStuff.MakeCube(i, 0, 10, size);
+            LessonTools.MakeCube(i, 0, 10, cubeSize);
 
         //for loop #2
         for (int i = 0; i < 10; i++)
-            LessonStuff.MakeCube(i, 0, 5, size);
+            LessonTools.MakeCube(i, 0, 5, cubeSize);
 
         //for loop #3
         for (int i = 0; i < 10; i++)
-            LessonStuff.MakeCube(i, i, 15, size);
+            LessonTools.MakeCube(i, i, 15, cubeSize);
 
 
         /*
