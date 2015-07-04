@@ -97,6 +97,11 @@ public class LessonTools : MonoBehaviour
         MakeShape(Shapes.cube, x, y, z, false, Color.blue, size);
     }
 
+    public static void MakeCube(Vector3 position, bool canMove, Color color, float size)
+    {
+        MakeShape(Shapes.cube, position.x, position.y, position.z, canMove, color, size);
+    }
+
     public static void MakeCube(float x, float y, float z, bool canMove, Color color, float size)
     {
         MakeShape(Shapes.cube, x, y, z, canMove, color, size);
