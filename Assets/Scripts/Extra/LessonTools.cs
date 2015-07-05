@@ -4,7 +4,7 @@ using System.Collections.Generic;
 
 public enum Shapes
 {
-    cube, sphere, cone, pyramid, tetrahedron, torus
+    cube, sphere, cone, pyramid, tetrahedron, torus, blankCube
 }
 
 public class LessonTools : MonoBehaviour
@@ -26,6 +26,7 @@ public class LessonTools : MonoBehaviour
             AddPrefab(Shapes.pyramid, "shapes/pyramid");
             AddPrefab(Shapes.tetrahedron, "shapes/tetrahedron");
             AddPrefab(Shapes.torus, "shapes/torus");
+            AddPrefab(Shapes.blankCube, "shapes/blank cube");
         }
         return prefabs;
     }
@@ -53,7 +54,26 @@ public class LessonTools : MonoBehaviour
 
     public static Color GetRandomColor()
     {
-        return new Color(Random.Range(0f, 1f), Random.Range(0f, 1f), Random.Range(0f, 1f));
+        float r = Random.Range(0f, 1f);
+        float g = Random.Range(0f, 1f);
+        float b = Random.Range(0f, 1f);
+
+        //make grey/sludge colors less likely
+        for (int i = 0; i < Random.Range(1, 3); i++)
+        {
+            if (Random.Range(0, 10) > 1)
+            {
+                int a = Random.Range(0, 3);
+                if (a == 0)
+                    r = 0;
+                if (a == 1)
+                    g = 0;
+                if (a == 2)
+                    b = 0;
+            }
+        }
+
+        return new Color(r, g, b);
     }
 
     private static void AddPrefab(Shapes shape, string path)
@@ -66,6 +86,11 @@ public class LessonTools : MonoBehaviour
     private static GameObject GetPrefab(Shapes thing)
     {
         return GetPrefabs()[thing];
+    }
+
+    public static GameObject MakeShape(Shapes shape, Vector3 position, bool canMove, Color color, float size)
+    {
+        return MakeShape(shape, position.x, position.y, position.z, canMove, color, size);
     }
 
     public static GameObject MakeShape(Shapes shape, float x, float y, float z, bool canMove, Color color, float size)
