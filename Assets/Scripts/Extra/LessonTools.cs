@@ -31,6 +31,11 @@ public class LessonTools : MonoBehaviour
         return prefabs;
     }
 
+    public static void MakeCoin(Vector3 position)
+    {
+        MakeCoin(position.x, position.y, position.z);
+    }
+
     public static void MakeCoin(float x, float y, float z)
     {
         if (coinPrefab == null)
@@ -130,5 +135,32 @@ public class LessonTools : MonoBehaviour
     public static void MakeCube(float x, float y, float z, bool canMove, Color color, float size)
     {
         MakeShape(Shapes.cube, x, y, z, canMove, color, size);
+    }
+
+    //The code below is complicated. Examine it if you dare.
+    private static List<Vector3> usedVoxelPoints;
+    public static void MakeHalfCircle(Vector3 position, float radius, Color color)
+    {
+        //Note: rainbows are hyperbolas, not half circles! But this way makes the coding exercise much simpler.
+        if (usedVoxelPoints == null)
+            usedVoxelPoints = new List<Vector3>();
+
+        float stepSize = Mathf.PI / radius / 8;
+
+        for (float radians = 0; radians < Mathf.PI; radians += stepSize)
+        {
+            //Given that radians is somewhere between 0 and Pi (or 0 and 180 degrees) calculate the x and y.
+            int x = Mathf.RoundToInt(Mathf.Cos(radians) * radius);
+            int y = Mathf.RoundToInt(Mathf.Sin(radians) * radius);
+            Vector3 newPoint = position + new Vector3(x, y, 0);
+
+            //Only create a cube at that point if we've never created a cube there before.
+            //This allows us to increment radians/degrees very slowly, slicing out very tiny slices of the circle.
+            if (!usedVoxelPoints.Contains(newPoint))
+            {
+                usedVoxelPoints.Add(newPoint);
+                LessonTools.MakeShape(Shapes.blankCube, newPoint, false, color, 1);
+            }
+        }
     }
 }

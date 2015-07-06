@@ -6,17 +6,15 @@ public class L1S2 : MonoBehaviour
 
     void Start()
     {
-        float cubeSize = 1;
-
         //Question: here are three "for loops". Match up each for loop with its sign in the 3D world: A, B, or C.
 
         //for loop #1
         for (int x = 0; x < 4; x++)
         {
-            LessonTools.MakeCube(x, 0, 2, cubeSize);
-            LessonTools.MakeCube(x, 0, 3, cubeSize);
-            LessonTools.MakeCube(x, 0, 4, cubeSize);
-            LessonTools.MakeCube(x, 0, 5, cubeSize);
+            LessonTools.MakeCube(x, 0, 2);
+            LessonTools.MakeCube(x, 0, 3);
+            LessonTools.MakeCube(x, 0, 4);
+            LessonTools.MakeCube(x, 0, 5);
         }
 
         //for loop #2
@@ -24,7 +22,7 @@ public class L1S2 : MonoBehaviour
         {
             for (int z = 0; z < 4; z++)
             {
-                LessonTools.MakeCube(x, 3, z + 10, cubeSize);
+                LessonTools.MakeCube(x, 3, z + 10);
             }
         }
 
@@ -33,7 +31,7 @@ public class L1S2 : MonoBehaviour
         {
             for (int z = 0; z < 4; z++)
             {
-                LessonTools.MakeCube(x + 6, 6, z + 10, cubeSize);
+                LessonTools.MakeCube(x + 6, 6, z + 10);
             }
         }
 
@@ -56,7 +54,7 @@ public class L1S2 : MonoBehaviour
         for (int x = 0; x < 4; x++)
             for (int y = 0; y < 4; y++)
                 for (int z = 0; z < 4; z++)
-                    LessonTools.MakeCube(x, y + 20, z,cubeSize);
+                    LessonTools.MakeCube(x, y + 20, z);
 
     }
 }
