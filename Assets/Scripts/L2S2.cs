@@ -36,7 +36,7 @@ public class L2S2 : MonoBehaviour
          * If you run your code and a rainbow appears, then you got the correct answer.
          */
 
-        if (a)
+        if (a||true)
             MakeRainbow();
 
         if (b)
@@ -65,6 +65,7 @@ public class L2S2 : MonoBehaviour
 
     private void MakeRainbow()
     {
+        //Extra challenge! Make the rainbow bigger, or smaller. Does the color still work? How could you fix it?
         for (int radius = 50; radius < 56; radius++)
         {
             Color color = Color.black;

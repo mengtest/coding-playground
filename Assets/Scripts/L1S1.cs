@@ -25,7 +25,6 @@ public class L1S1 : MonoBehaviour
         for (int i = 0; i < 10; i++)
             LessonTools.MakeCube(i, i, 15, cubeSize);
 
-
         /*
          * Extra challenge!
          * 

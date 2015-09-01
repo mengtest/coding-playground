@@ -7,61 +7,81 @@ public class L1S5 : MonoBehaviour
 
     void Start()
     {
-        int height, xOffset, zOffset;
+        float xOffset, zOffset, count;
+        float red, green, blue;
+        bool canMove = true;
 
-        //Sign #1
-        height = 5;
-        xOffset = -10;
-        zOffset = 20;
-        for (int j = 0; j < height; j++)
-            for (int i = j - height; i < height - j - 1; i++)
-                for (int k = j - height; k < height - j - 1; k++)
-                    LessonTools.MakeCube(i + xOffset, j, k + zOffset, true, Color.red, 1);
-
-        //Sign #2
-        height = 7;
-        xOffset = 0;
-        zOffset = 15;
-        for (int j = 0; j < height; j++)
-            for (int i = 0; i < height - j; i++)
-                LessonTools.MakeCube(i + xOffset, j, 0 + zOffset, true, Color.yellow, 1);
-
-        //Sign #3
-        height = 4;
-        xOffset = 10;
-        zOffset = 15;
-        for (int i = 0; i < height; i++)
-            for (int j = 0; j < height; j++)
-                for (int k = 0; k < height; k++)
-                    LessonTools.MakeCube(i + xOffset, j, k + zOffset, true, Color.cyan, 1);
-
-        MakeRainbow();
-    }
-
-    private void MakeRainbow()
-    {
-        Color color;
-
-        /* Extra challenge!
-         * 
-         * Did you notice the rainbow in the sky? Its colors are wrong though.
-         * 
-         * Look at the for loop below. Any code written inside it will happen six times.
-         * The first time, radius equals 40. After that, radius equals 41, then 42, 43, 44, and 45.
-         *      
-         * Go to the internet and look at a picture of a rainbow. Can you make a good looking cube-rainbow?
-         * The only thing you need to do is adjust the color according to the radius. Hint:
-         * 
-         * if(radius==42)
-         *      color=Color.red;
-         */
-
-        for (int radius = 40; radius < 46; radius++)
+        //These are the cubes for sign A.
+        count = 10;
+        xOffset = -7f;
+        zOffset = -6;
+        for (float y = 0; y < count; y++)
         {
-            color = LessonTools.GetRandomColor();
-            LessonTools.MakeHalfCircle(new Vector3(0, 0, 20), radius, color);
+            red = y / count;
+            green = 0;
+            blue = 0;
+
+            Color color = new Color(red, green, blue);
+            LessonTools.MakeCube(xOffset, y, zOffset, canMove, color, 1);
         }
+
+        //These are the cubes for sign B.
+        count = 10;
+        xOffset = 7f;
+        zOffset = -6;
+        for (float y = 0; y < count; y++)
+        {
+            red = y / count;
+            red = 1 - red;
+            green = 0;
+            blue = 0;
+
+            Color color = new Color(red, green, blue);
+            LessonTools.MakeCube(xOffset, y, zOffset, canMove, color, 1);
+        }
+
+        //These are the cubes for sign C.
+        count = 7;
+        xOffset = -10.5f;
+        zOffset = 8;
+        for (float x = 0; x < count; x++)
+        {
+            for (float y = 0; y < count; y++)
+            {
+                red = y / count;
+                green = y / count;
+                green = 1 - green;
+                blue = 1;
+
+                Color color = new Color(red, green, blue);
+                LessonTools.MakeCube(x + xOffset, y, zOffset, canMove, color, 1);
+            }
+        }
+
+        //These are the cubes for sign D.
+        count = 10;
+        xOffset = 4.5f;
+        zOffset = 8;
+        for (float x = 0; x < count; x++)
+        {
+            for (float y = 0; y < count; y++)
+            {
+                red = x / count;
+                green = x / count;
+                blue = 1;
+
+                Color color = new Color(red, green, blue);
+                LessonTools.MakeCube(x + xOffset, y, zOffset, canMove, color, 1);
+            }
+        }
+
+        /*
+         * Extra challenge!
+         * 
+         * What is the most interesting color pattern you can make?
+         * 
+         * Try replacing a line like "green = 0" with something more interesting, like "green = y / count".
+         * 
+         */
     }
-
-
 }

@@ -117,24 +117,24 @@ public class LessonTools : MonoBehaviour
         return newShape;
     }
 
-    public static void MakeCube(float x, float y, float z)
+    public static GameObject MakeCube(float x, float y, float z, bool canMove = false)
     {
-        MakeShape(Shapes.cube, x, y, z, true, Color.blue, 1);
+		return MakeShape(Shapes.cube, x, y, z, canMove, Color.blue, 1);
     }
 
-    public static void MakeCube(float x, float y, float z, float size)
+    public static GameObject MakeCube(float x, float y, float z, float size, bool canMove = false)
     {
-        MakeShape(Shapes.cube, x, y, z, false, Color.blue, size);
+        return MakeShape(Shapes.cube, x, y, z, canMove, Color.blue, size);
     }
 
-    public static void MakeCube(Vector3 position, bool canMove, Color color, float size)
+    public static GameObject MakeCube(Vector3 position, bool canMove, Color color, float size)
     {
-        MakeShape(Shapes.cube, position.x, position.y, position.z, canMove, color, size);
+        return MakeShape(Shapes.cube, position.x, position.y, position.z, canMove, color, size);
     }
 
-    public static void MakeCube(float x, float y, float z, bool canMove, Color color, float size)
+    public static GameObject MakeCube(float x, float y, float z, bool canMove, Color color, float size)
     {
-        MakeShape(Shapes.cube, x, y, z, canMove, color, size);
+        return MakeShape(Shapes.cube, x, y, z, canMove, color, size);
     }
 
     //The code below is complicated. Examine it if you dare.

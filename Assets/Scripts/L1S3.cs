@@ -19,6 +19,7 @@ public class L1S3 : MonoBehaviour
             for (int z = 0; z < chessWidth; z++)
             {
 
+				//Here, color will become red if x is divisible by 3. Otherwise, color will become white.
                 if (IsNumberDivisibleByThree(x))
                 {
                     color = Color.red;
@@ -40,6 +41,7 @@ public class L1S3 : MonoBehaviour
             for (int z = 0; z < chessWidth; z++)
             {
 
+				//In English, this code reads as: is x an even number OR is z an even number?
                 if (IsNumberEven(x) || IsNumberEven(z))
                 {
                     color = Color.green;
@@ -61,6 +63,7 @@ public class L1S3 : MonoBehaviour
             for (int z = 0; z < chessWidth; z++)
             {
 
+				//In English, this code reads as: is x plus z greater than 7?
                 if (x + z > 7)
                 {
                     color = Color.cyan;
@@ -82,8 +85,12 @@ public class L1S3 : MonoBehaviour
             for (int z = 0; z < chessWidth; z++)
             {
 
+				//In English, this code reads as: is x equal to zero OR is x greater than 3?
                 if (x == 0 || x > 3)
                 {
+
+					//In English, this code reads as: now that we know x is equal to zero, or x is greater than 3,
+					//is z even? If so, make color equal to magenta. Otherwise, make it equal to red.
                     if (IsNumberEven(z))
                     {
                         color = Color.magenta;
@@ -105,6 +112,13 @@ public class L1S3 : MonoBehaviour
 
         /*
          * Extra challenge!
+         * 
+         * Change one of the four chessboards above so that it is colored just like a chessboard.
+         * Note: You should only change the lines that start with "if".
+         * 
+         * 
+         * 
+         * Another extra challenge!
          * 
          * Change the code above to make a smiley face out of yellow and black cubes.
          * You can make the grid larger than 8 by 8 if you like.

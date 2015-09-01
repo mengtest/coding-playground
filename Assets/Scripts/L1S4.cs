@@ -1,77 +1,53 @@
 ﻿using UnityEngine;
 using System.Collections;
-using System.Collections.Generic;
 
-public class L1S4 : MonoBehaviour
-{
+public class L1S4 : MonoBehaviour {
+	
+	void Start () {
+		float red, green, blue;
+		Color color;
 
-    void Start()
-    {
-        float xOffset, zOffset, size;
-        bool canMove = true;
+		//Cube #1
+		red = 1;
+		blue = 0;
+		green = 0;
+		color = new Color (red, green, blue);
+		LessonTools.MakeCube (Secret.L1S5(), 10, 3, true, color, 2);
 
-        //These are the cubes for sign A.
-        size = 10;
-        xOffset = -7f;
-        zOffset = -6;
-        for (float y = 0; y < size; y++)
-        {
-            float red = y / size;
-            float green = 0;
-            float blue = 0;
+		//Cube #2
+		red = 0;
+		blue = 1;
+		green = 1;
+		color = new Color (red, green, blue);
+		LessonTools.MakeCube (Secret.L1S5(), 10, 3, true, color, 2);
 
-            Color color = new Color(red, green, blue);
-            LessonTools.MakeCube(xOffset, y, zOffset, canMove, color, 1);
-        }
+		//Cube #3
+		red = 0.5f;
+		blue = 0.5f;
+		green = 0.5f;
+		color = new Color (red, green, blue);
+		LessonTools.MakeCube (Secret.L1S5(), 10, 3, true, color, 2);
 
-        //These are the cubes for sign B.
-        size = 10;
-        xOffset = 7f;
-        zOffset = -6;
-        for (float y = 0; y < size; y++)
-        {
-            float red = y / size;
-            red = 1 - red;
-            float green = 0;
-            float blue = 0;
+		//Cube #4
+		red = 0.5f;
+		blue = 0;
+		green = 0;
+		color = new Color (red, green, blue);
+		LessonTools.MakeCube (Secret.L1S5(), 10, 3, true, color, 2);
 
-            Color color = new Color(red, green, blue);
-            LessonTools.MakeCube(xOffset, y, zOffset, canMove, color, 1);
-        }
+		//Cube #5
+		red = 0.3f;
+		blue = 0.3f;
+		green = 1f;
+		color = new Color (red, green, blue);
+		LessonTools.MakeCube (Secret.L1S5(), 10, 3, true, color, 2);
 
-        //These are the cubes for sign C.
-        size = 7;
-        xOffset = -10.5f;
-        zOffset = 8;
-        for (float x = 0; x < size; x++)
-        {
-            for (float y = 0; y < size; y++)
-            {
-                float red = y / size;
-                float green = y / size;
-                green = 1 - green;
-                float blue = 1;
-
-                Color color = new Color(red, green, blue);
-                LessonTools.MakeCube(x + xOffset, y, zOffset, canMove, color, 1);
-            }
-        }
-
-        //These are the cubes for sign D.
-        size = 10;
-        xOffset = 4.5f;
-        zOffset = 8;
-        for (float x = 0; x < size; x++)
-        {
-            for (float y = 0; y < size; y++)
-            {
-                float red = x / size;
-                float green = x / size;
-                float blue = 1;
-
-                Color color = new Color(red, green, blue);
-                LessonTools.MakeCube(x + xOffset, y, zOffset, canMove, color, 1);
-            }
-        }
-    }
+		/* Extra challenge!
+		 * 
+		 * Can you make pink? Yellow? Black? White?
+		 * 
+		 * Try making up your own interesting colors.
+		 * 
+		 */
+	}
 }

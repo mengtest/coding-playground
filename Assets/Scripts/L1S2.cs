@@ -4,39 +4,36 @@ using System.Collections;
 public class L1S2 : MonoBehaviour
 {
 
-    void Start()
-    {
-        //Question: here are three "for loops". Match up each for loop with its sign in the 3D world: A, B, or C.
+	void Start ()
+	{
+		//Question: here are three "for loops". Match up each for loop with its sign in the 3D world: A, B, or C.
 
-        //for loop #1
-        for (int x = 0; x < 4; x++)
-        {
-            LessonTools.MakeCube(x, 0, 2);
-            LessonTools.MakeCube(x, 0, 3);
-            LessonTools.MakeCube(x, 0, 4);
-            LessonTools.MakeCube(x, 0, 5);
-        }
+		bool canMove = false;
 
-        //for loop #2
-        for (int x = 0; x < 4; x++)
-        {
-            for (int z = 0; z < 4; z++)
-            {
-                LessonTools.MakeCube(x, 3, z + 10);
-            }
-        }
+		//for loop #1
+		for (int x = 0; x < 4; x++) {
+			LessonTools.MakeCube (x, 0, 2, canMove);
+			LessonTools.MakeCube (x, 0, 3, canMove);
+			LessonTools.MakeCube (x, 0, 4, canMove);
+			LessonTools.MakeCube (x, 0, 5, canMove);
+		}
 
-        //for loop #3
-        for (int x = 0; x < 12; x++)
-        {
-            for (int z = 0; z < 4; z++)
-            {
-                LessonTools.MakeCube(x + 6, 6, z + 10);
-            }
-        }
+		//for loop #2
+		for (int x = 0; x < 4; x++) {
+			for (int z = 0; z < 4; z++) {
+				LessonTools.MakeCube (x, 3, z + 10, canMove);
+			}
+		}
+
+		//for loop #3
+		for (int x = 0; x < 12; x++) {
+			for (int z = 0; z < 4; z++) {
+				LessonTools.MakeCube (x + 6, 6, z + 10, canMove);
+			}
+		}
 
 
-        /*
+		/*
          * Extra challenge!
          * 
          * Did you notice the extra coins on the highest platform?
@@ -45,16 +42,16 @@ public class L1S2 : MonoBehaviour
         */
 
 
-        /*
+		/*
          * Another extra challenge!
          * 
          * The following code makes something special in the sky. What is it?
         */
 
-        for (int x = 0; x < 4; x++)
-            for (int y = 0; y < 4; y++)
-                for (int z = 0; z < 4; z++)
-                    LessonTools.MakeCube(x, y + 20, z);
+		for (int x = 0; x < 4; x++)
+			for (int y = 0; y < 4; y++)
+				for (int z = 0; z < 4; z++)
+					LessonTools.MakeCube (x, y + 20, z, canMove);
 
-    }
+	}
 }
