@@ -9,7 +9,7 @@ public class L1S1 : MonoBehaviour
         //When you see two slashes at the start of the line like this: "//" it means the computer will ignore this line.
         //Lines starting with two slashes are called comments.
 
-        float cubeSize = 0.8f;
+		float cubeSize = 0.8f;
 
         //Question: here are three "for loops". Match up each for loop with its sign in the 3D world: A, B, or C.
 

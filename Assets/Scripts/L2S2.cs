@@ -36,10 +36,10 @@ public class L2S2 : MonoBehaviour
          * If you run your code and a rainbow appears, then you got the correct answer.
          */
 
-        if (a||true)
+        if (true)
             MakeRainbow();
 
-        if (b)
+        if (true)
             MakeCoinsAboveRainbow();
     }
 
