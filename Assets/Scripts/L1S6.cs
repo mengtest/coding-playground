@@ -65,18 +65,10 @@ public class L1S6 : MonoBehaviour
 		for (int radius = 40; radius < 46; radius++)
 		{
 			color = LessonTools.GetRandomColor();
-			if (radius == 40)
-				color = Color.magenta;
-			if (radius == 41)
-				color = Color.blue;
-			if (radius == 42)
-				color = Color.green;
-			if (radius == 43)
-				color = Color.yellow;
-			if (radius == 44)
-				color = new Color(1f, 0.5f, 0f);
-			if (radius == 45)
-				color = Color.red;
+
+
+
+
 			LessonTools.MakeHalfCircle(new Vector3(0, 0, 20), radius, color);
 		}
 	}
